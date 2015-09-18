@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from distutils.core import setup
 
 with open('requirements.txt') as f:
     requirements = [line.strip() for line in f.readlines()]
@@ -6,7 +6,7 @@ with open('requirements.txt') as f:
 setup(
     name='tengri',
     version='0.1',
-    packages=find_packages,
+    packages=['tengri'],
     url='https://github.com/leopepe/tengri',
     license='Simplified BSD',
     author='Leonardo Pepe',
@@ -16,6 +16,6 @@ setup(
     install_requires=requirements,
     entry_points={
         'console_scripts': ['tengri = tengri.__main__:main'],
-        'setuptools.installation': ['eggsecutable = tengri.__main__:main'],
+        'setuptools.installation': ['eggsecutable = tengri.__main__:main']
     }
 )
